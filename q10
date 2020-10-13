@@ -1,0 +1,19 @@
+// para outros tipos de váriavel, basta alterar no programa para o tipo desejado
+#include <stdio.h>
+int main(){
+int x[4];
+int *px, i;
+for(i=0; i<4; i++){
+printf(“%d, “, x[4]);
+}
+printf(“\n”);
+px = x;
+printf(“px = %p \n , px);
+px = px +1;
+printf(“px = %p \n , px);
+px = px +2; 
+printf(“px = %p \n , px);
+px = px + 3;
+printf(“px = %p \n , px);
+return 0;
+}
