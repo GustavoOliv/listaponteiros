@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//algorimo da bolha para ordenar em crescente os valores do vetor
  void BubbleSort(float vetor[], int tamanho){
 	int aux, i, j;
 	for(j=tamanho-1; j>=1; j--){
@@ -17,26 +18,39 @@
 int main(void) {
   float *x;
   int i, n;
+  
+  //recebe o tamanho do vetor x[n] a ser criado
   printf("Digite o numero de valores desejados: ");
   scanf("%d", &n);
 
+  //cria o vetor x[n] e recebe os valores de suas entradas
   x = malloc(n*sizeof(float));
   printf("Digite os valores: \n");
   for(i=0;i<n;i++){
     scanf("%f", &x[i]);
   }
+  
+  printf("\n");
+  
+  //imprime o vetor x[n] criado, na ordem que os valores foram dados
   printf("Vetor x criado: \n");
  for(i=0;i<n;i++){
     printf("%f ", x[i]);
   }
+  
+  //pula linhas para estetica
   printf("\n");
-  printf("Vetor x em ordem crescente: \n");
-
+  printf("\n");
+  
+  //ordena as entradas do vetor em ordem crescente
   BubbleSort(x,n);
-
+  
+  //imprime o vetor x[n] agora em ordem crescente
+  printf("Vetor x em ordem crescente: \n");
 for(i=0;i<n;i++){
     printf("%f ", x[i]);
   }
+  
   printf("\n");
 
 free(x);
