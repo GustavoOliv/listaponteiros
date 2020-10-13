@@ -33,7 +33,7 @@ int main(void) {
   printf("\n");
   printf("\n");
 
-  //coloca as entradas do vetor em ordem crescente
+  //ordena as entradas do vetor em ordem crescente
   qsort(x,n,sizeof(float),cres);
 
   //imprime o vetor x[n] agora em ordem crescente
