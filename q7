@@ -1,0 +1,2 @@
+p= mat+1; segundo elemento de mat
+p= mat++; segundo elemento de mat
