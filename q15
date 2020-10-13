@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//função de comparação
+int cres (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
+
+int main(void) {
+  float *x;
+  int i, n;
+
+  //recebe o tamanho do vetor x[n] a ser criado
+  printf("Digite o numero de valores desejados: ");
+  scanf("%d", &n);
+
+  // cria o vetor x[n] e recebe os valores de suas entradas
+  x = malloc(n*sizeof(float));
+  printf("Digite os valores: \n");
+  for(i=0;i<n;i++){
+    scanf("%f", &x[i]);
+  }
+
+  printf("\n");
+
+  //imprime o vetor x[n] criado, na ordem que os valores foram dados
+  printf("Vetor x criado: ");
+ for(i=0;i<n;i++){
+    printf("%f ", x[i]);
+  }
+
+  //pula linhas para estetica
+  printf("\n");
+  printf("\n");
+
+  //ordena as entradas do vetor em ordem crescente
+  qsort(x,n,sizeof(float),cres);
+
+  //imprime o vetor x[n] agora em ordem crescente
+  printf("Vetor x em ordem crescente: ");
+for(i=0;i<n;i++){
+    printf("%f ", x[i]);
+  }
+
+  printf("\n");
+
+free(x);
+  return 0;
+}
